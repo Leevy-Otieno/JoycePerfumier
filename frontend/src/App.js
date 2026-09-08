@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <>
-    <Header />
+    <Header className="min-h-[calc(100vh-120px)]" />
     <main>
       <Outlet />
     </main>

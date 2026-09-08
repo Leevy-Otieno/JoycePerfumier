@@ -21,7 +21,11 @@ const Login = () => {
       }
     })
   }
-
+  const handleSubmit = (e) => {
+    e.preventDefault()
+   
+  }
+ console.log("data login", data)
   return (
    <section id="login">
 
@@ -35,7 +39,11 @@ const Login = () => {
 
         </div>
 
-        <form className="pt-5">
+        <form 
+        onSubmit= {handleSubmit}
+        className="pt-5">
+
+
           <div className="grid">
             <label>Email:</label>
           <div  className="bg-slate-200 p-2"> 
@@ -43,17 +51,19 @@ const Login = () => {
                type="email" 
                onChange={handleChange} name="email" value={data.email}
                placeholder="Enter your email"
-               className="h-full w-full outline-none" /></div>
+               className="h-full w-full outline-none bg-transparent" /></div>
           </div>
           
            <div>
               <label>Password:</label>
           <div className="bg-slate-200 p-2 flex"> 
 
-             <input type={showPassword ? "text" : "password"} 
+             <input
+              type={showPassword ? "text" : "password"} 
               placeholder="Enter your password"
-              onChange={handleChange} name="password" value={data.password}
-              className="h-full w-full outline-none" />
+              onChange={handleChange} name="password" 
+              value={data.password}
+              className="h-full w-full outline-none bg-transparent" />
 
              <div className="cursor-pointer" onClick={() => setShowPassword(!showPassword)} text-xl>
               <span>

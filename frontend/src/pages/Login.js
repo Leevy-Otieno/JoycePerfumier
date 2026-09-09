@@ -35,13 +35,18 @@ const Login = () => {
       <div className="bg-white p-5 w-full max-w-sm mx-auto ">
        <div className="w-20 h-20 mx-auto">
 
-         <img src={loginIcons} alt="login icons" className='w-20 mx-auto' />
+         <div>
+
+           <img src={loginIcons} alt="login icons" className='w-20 mx-auto' />
+
+         </div>
+      
 
         </div>
 
         <form 
         onSubmit= {handleSubmit}
-        className="pt-5">
+        className="pt-6 flex flex-col gap-2">
 
 
           <div className="grid">
@@ -61,7 +66,7 @@ const Login = () => {
              <input
               type={showPassword ? "text" : "password"} 
               placeholder="Enter your password"
-              onChange={handleChange} name="password" 
+              onChange={handleChange} name="password"  
               value={data.password}
               className="h-full w-full outline-none bg-transparent" />
 

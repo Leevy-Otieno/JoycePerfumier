@@ -5,6 +5,7 @@ import loginIcons from "../assest/signin.gif";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import imageToBase64 from "../helpers/imageToBase64";
+
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -25,6 +26,7 @@ const SignUp = () => {
       };
     });
   };
+
   const handleUploadpic = async (e) => {
     const file = e.target.files[0];
     const imagePic = await imageToBase64(file);
@@ -75,10 +77,12 @@ const SignUp = () => {
               <div className="bg-slate-200 p-2">
                 <input
                   type="text"
-                  onChange={handleChange}
+                 
                   name="name"
                   value={data.name}
                   placeholder="Enter your name"
+                   onChange={handleChange}
+                   required
                   className="h-full w-full outline-none bg-transparent"
                 />
               </div>
@@ -95,6 +99,7 @@ const SignUp = () => {
                   name="email"
                   value={data.email}
                   placeholder="Enter your email"
+                  required
                   className="h-full w-full outline-none bg-transparent"
                 />
               </div>
@@ -109,6 +114,7 @@ const SignUp = () => {
                   onChange={handleChange}
                   name="password"
                   value={data.password}
+                  required
                   className="h-full w-full outline-none bg-transparent"
                 />
 
@@ -137,6 +143,7 @@ const SignUp = () => {
                   onChange={handleChange}
                   name="confirmPassword"
                   value={data.confirmPassword}
+                  required
                   className="h-full w-full outline-none bg-transparent"
                 />
 

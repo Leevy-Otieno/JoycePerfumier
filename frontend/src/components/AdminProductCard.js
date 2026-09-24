@@ -1,13 +1,39 @@
 import React, { useState } from 'react'
-import { MdModeEditOutline } from "react-icons/md";
+import { MdModeEditOutline, MdDelete } from "react-icons/md";
 import AdminEditProduct from './AdminEditProduct';
 import displayINRCurrency from '../helpers/displayCurrency';
+import SummaryApi from '../common';
+import { toast } from 'react-toastify';
 
 const AdminProductCard = ({
     data,
     fetchdata
 }) => {
-    const [editProduct,setEditProduct] = useState(false)
+    const [editProduct, setEditProduct] = useState(false)
+
+    const handleDelete = async () => {
+        // Safe fallback URL if deleteProduct isn't in your SummaryApi file yet
+        const url = SummaryApi.deleteProduct?.url || "http://localhost:8080/api/delete-product";
+        const method = SummaryApi.deleteProduct?.method || "post";
+
+        const response = await fetch(url, {
+            method: method,
+            headers: {
+                "content-type": "application/json"
+            },
+            credentials: 'include',
+            body: JSON.stringify({ _id: data?._id })
+        })
+
+        const dataResponse = await response.json()
+
+        if (dataResponse.success) {
+            toast.success(dataResponse.message)
+            fetchdata() // Refreshes the product list after deletion
+        } else {
+            toast.error(dataResponse.message)
+        }
+    }
 
   return (
     <div className='bg-white p-4 rounded '>
@@ -18,21 +44,22 @@ const AdminProductCard = ({
             <h1 className='text-ellipsis line-clamp-2'>{data.productName}</h1>
 
             <div>
-
                 <p className='font-semibold'>
                   {
                     displayINRCurrency(data.sellingPrice)
                   }
-        
                 </p>
 
-                <div className='w-fit ml-auto p-2 bg-green-100 hover:bg-green-600 rounded-full hover:text-white cursor-pointer' onClick={()=>setEditProduct(true)}>
-                    <MdModeEditOutline/>
+                {/* Edit & Delete Action Buttons */}
+                <div className='flex items-center justify-end gap-2 mt-2'>
+                    <div className='p-2 bg-green-100 hover:bg-green-600 rounded-full hover:text-white cursor-pointer' onClick={()=>setEditProduct(true)}>
+                        <MdModeEditOutline/>
+                    </div>
+                    <div className='p-2 bg-red-100 hover:bg-red-600 rounded-full hover:text-white cursor-pointer' onClick={handleDelete}>
+                        <MdDelete/>
+                    </div>
                 </div>
-
             </div>
-
-          
        </div>
         
         {
@@ -40,7 +67,6 @@ const AdminProductCard = ({
             <AdminEditProduct productData={data} onClose={()=>setEditProduct(false)} fetchdata={fetchdata}/>
           )
         }
-    
     </div>
   )
 }

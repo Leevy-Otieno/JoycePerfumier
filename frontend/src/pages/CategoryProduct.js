@@ -97,8 +97,8 @@ const CategoryProduct = () => {
 
        {/***desktop version */}
        <div className='hidden lg:grid grid-cols-[200px,1fr]'>
-           {/***left side */}
-           <div className='bg-white p-2 min-h-[calc(100vh-120px)] overflow-y-scroll'>
+            {/***left side */}
+            <div className='bg-white p-2 min-h-[calc(100vh-120px)] overflow-y-scroll'>
                 {/**sort by */}
                 <div className=''>
                     <h3 className='text-base uppercase font-medium text-slate-500 border-b pb-1 border-slate-300'>Sort by</h3>
@@ -125,9 +125,9 @@ const CategoryProduct = () => {
                         {
                           productCategory.map((categoryName,index)=>{
                             return(
-                              <div className='flex items-center gap-3'>
-                                 <input type='checkbox' name={"category"} checked={selectCategory[categoryName?.value]} value={categoryName?.value} id={categoryName?.value} onChange={handleSelectCategory} />
-                                 <label htmlFor={categoryName?.value}>{categoryName?.label}</label>
+                              <div key={categoryName?.value || index} className='flex items-center gap-3'>
+                               <input type='checkbox' name={"category"} checked={selectCategory[categoryName?.value]} value={categoryName?.value} id={categoryName?.value} onChange={handleSelectCategory} />
+                               <label htmlFor={categoryName?.value}>{categoryName?.label}</label>
                               </div>
                             )
                           })

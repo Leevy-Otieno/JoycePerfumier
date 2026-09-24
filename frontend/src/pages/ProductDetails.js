@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react'
-import  { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import SummaryApi from '../common'
 import { FaStar } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
@@ -102,7 +102,7 @@ const ProductDetails = () => {
           <div className='h-96 flex flex-col lg:flex-row-reverse gap-4'>
 
               <div className='h-[300px] w-[300px] lg:h-96 lg:w-96 bg-slate-200 relative p-2'>
-                  <img src={activeImage} className='h-full w-full object-scale-down mix-blend-multiply' onMouseMove={handleZoomImage} onMouseLeave={handleLeaveImageZoom}/>
+                  <img src={activeImage} className='h-full w-full object-scale-down mix-blend-multiply' onMouseMove={handleZoomImage} onMouseLeave={handleLeaveImageZoom} alt="" />
 
                     {/**product zoom */}
                     {
@@ -144,8 +144,8 @@ const ProductDetails = () => {
                         {
                           data?.productImage?.map((imgURL,index) =>{
                             return(
-                              <div className='h-20 w-20 bg-slate-200 rounded p-1' key={imgURL}>
-                                <img src={imgURL} className='w-full h-full object-scale-down mix-blend-multiply cursor-pointer' onMouseEnter={()=>handleMouseEnterProduct(imgURL)}  onClick={()=>handleMouseEnterProduct(imgURL)}/>
+                              <div className='h-20 w-20 bg-slate-200 rounded p-1' key={imgURL ? `${imgURL}-${index}` : `image-${index}`}>
+                                <img src={imgURL} className='w-full h-full object-scale-down mix-blend-multiply cursor-pointer' onMouseEnter={()=>handleMouseEnterProduct(imgURL)}  onClick={()=>handleMouseEnterProduct(imgURL)} alt="" />
                               </div>
                             )
                           })

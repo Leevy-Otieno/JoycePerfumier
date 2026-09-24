@@ -89,7 +89,7 @@ const UploadProduct = ({
     if(responseData.error){
       toast.error(responseData?.message)
     }
-  
+ 
 
   }
 
@@ -159,7 +159,7 @@ const UploadProduct = ({
                             {
                               data.productImage.map((el,index)=>{
                                 return(
-                                  <div className='relative group'>
+                                  <div className='relative group' key={el ? `${el}-${index}` : `upload-img-${index}`}>
                                       <img 
                                         src={el} 
                                         alt={el} 
@@ -171,9 +171,9 @@ const UploadProduct = ({
                                           setFullScreenImage(el)
                                         }}/>
 
-                                        <div className='absolute bottom-0 right-0 p-1 text-white bg-red-600 rounded-full hidden group-hover:block cursor-pointer' onClick={()=>handleDeleteProductImage(index)}>
-                                          <MdDelete/>  
-                                        </div>
+                                      <div className='absolute bottom-0 right-0 p-1 text-white bg-red-600 rounded-full hidden group-hover:block cursor-pointer' onClick={()=>handleDeleteProductImage(index)}>
+                                        <MdDelete/>  
+                                      </div>
                                   </div>
                                   
                                 )
@@ -232,7 +232,7 @@ const UploadProduct = ({
 
 
 
-      
+     
        </div>
 
 

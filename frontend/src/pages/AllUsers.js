@@ -54,7 +54,7 @@ const AllUsers = () => {
                 {
                     allUser.map((el,index) => {
                         return(
-                            <tr>
+                            <tr key={el?._id || index}>
                                 <td>{index+1}</td>
                                 <td>{el?.name}</td>
                                 <td>{el?.email}</td>
@@ -88,7 +88,7 @@ const AllUsers = () => {
                     userId={updateUserDetails._id}
                     callFunc={fetchAllUsers}
                 />
-            )      
+            )       
         }
     </div>
   )

@@ -1,28 +1,59 @@
-import React from 'react'
-import CategoryList from '../components/CategoryList'
-import BannerProduct from '../components/BannerProduct'
-import HorizontalCardProduct from '../components/HorizontalCardProduct'
-import VerticalCardProduct from '../components/VerticalCardProduct'
+import React from "react";
+import CategoryList from "../components/CategoryList";
+import BannerProduct from "../components/BannerProduct";
+import HorizontalCardProduct from "../components/HorizontalCardProduct";
+import VerticalCardProduct from "../components/VerticalCardProduct";
 
 const Home = () => {
   return (
     <div>
-      <CategoryList/>
-      <BannerProduct/>
+      <CategoryList />
+      <BannerProduct />
 
-      <HorizontalCardProduct category={"Mens Perfumes"} heading={"Mens Perfumes"}/>
-      <HorizontalCardProduct category={"watches"} heading={"Popular's Watches"}/>
+      <HorizontalCardProduct
+        category={"Mens Perfumes"}
+        heading={"Mens Perfumes"}
+      />
+      <HorizontalCardProduct
+        category={"watches"}
+        heading={"Popular's Watches"}
+      />
 
-      <VerticalCardProduct category={"mobiles"} heading={"Mobiles"}/>
-      <VerticalCardProduct category={"Mouse"} heading={"Mouse"}/>
-      <VerticalCardProduct category={"televisions"} heading={"Televisions"}/>
-      <VerticalCardProduct category={"camera"} heading={"Camera & Photography"}/>
-      <VerticalCardProduct category={"earphones"} heading={"Wired Earphones"}/>
-      <VerticalCardProduct category={"speakers"} heading={"Bluetooth Speakers"}/>
-      <VerticalCardProduct category={"refrigerator"} heading={"Refrigerator"}/>
-      <VerticalCardProduct category={"trimmers"} heading={"Trimmers"}/>
+      <VerticalCardProduct
+        category={"unisex perfumes"}
+        heading={"unisex perfumes"}
+      />
+      <VerticalCardProduct
+        category={"women's fragrances"}
+        heading={"Women's fragrances"}
+      />
+      <VerticalCardProduct
+        category={"body sprays & mists"}
+        heading={"Body Sprays & Mists"}
+      />
+      <VerticalCardProduct
+        category={"perfume gift sets"}
+        heading={"Perfume Gift Sets"}
+      />
+      <VerticalCardProduct
+        category={"personalized & custom gifts"}
+        heading={"Personalized & Custom Gifts"}
+      />
+      <VerticalCardProduct
+        category={"for him valentine gift"}
+        heading={"For Him Valentine gift"}
+      />
+      <VerticalCardProduct
+        category={"for her valentine gift"}
+        heading={"For Her Valentine gift"}
+      />
+      <VerticalCardProduct category={"gift boxes"} heading={"Gift boxes"} />
+      <VerticalCardProduct
+        category={"love notes & giftcards"}
+        heading={"Love notes & Giftcards"}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

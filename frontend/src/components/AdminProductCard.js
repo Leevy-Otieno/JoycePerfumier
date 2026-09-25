@@ -55,7 +55,7 @@ const AdminProductCard = ({
                     <div className='p-2 bg-green-100 hover:bg-green-600 rounded-full hover:text-white cursor-pointer' onClick={()=>setEditProduct(true)}>
                         <MdModeEditOutline/>
                     </div>
-                    <div className='p-2 bg-red-100 hover:bg-red-600 rounded-full hover:text-white cursor-pointer' onClick={handleDelete}>
+                    <div className='p-2 bg-amber-100 hover:bg-amber-600 rounded-full hover:text-white cursor-pointer' onClick={handleDelete}>
                         <MdDelete/>
                     </div>
                 </div>

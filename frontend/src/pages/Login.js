@@ -33,7 +33,7 @@ const Login = () => {
 
         const dataResponse = await fetch(SummaryApi.signIn.url,{
             method : SummaryApi.signIn.method,
-            credentials : 'include',
+            camberentials : 'include',
             headers : {
                 "content-type" : "application/json"
             },
@@ -104,16 +104,16 @@ const Login = () => {
                                     </span>
                                 </div>
                             </div>
-                            <Link to={'/forgot-password'} className='block w-fit ml-auto hover:underline hover:text-red-600'>
+                            <Link to={'/forgot-password'} className='block w-fit ml-auto hover:underline hover:text-amber-600'>
                                 Forgot password ?
                             </Link>
                         </div>
 
-                        <button className='bg-red-600 hover:bg-red-700 text-white px-6 py-2 w-full max-w-[150px] rounded-full hover:scale-110 transition-all mx-auto block mt-6'>Login</button>
+                        <button className='bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 w-full max-w-[150px] rounded-full hover:scale-110 transition-all mx-auto block mt-6'>Login</button>
 
                     </form>
 
-                    <p className='my-5'>Don't have account ? <Link to={"/sign-up"} className=' text-red-600 hover:text-red-700 hover:underline'>Sign up</Link></p>
+                    <p className='my-5'>Don't have account ? <Link to={"/sign-up"} className=' text-amber-600 hover:text-amber-700 hover:underline'>Sign up</Link></p>
             </div>
 
 

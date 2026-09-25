@@ -105,7 +105,7 @@ const SignUp = () => {
                                       name='name'
                                       value={data.name}
                                       onChange={handleOnChange}
-                                      required
+                                      requiamber
                                       className='w-full h-full outline-none bg-transparent'/>
                               </div>
                           </div>
@@ -118,7 +118,7 @@ const SignUp = () => {
                                     name='email'
                                     value={data.email}
                                     onChange={handleOnChange}
-                                    required
+                                    requiamber
                                     className='w-full h-full outline-none bg-transparent'/>
                             </div>
                         </div>
@@ -132,7 +132,7 @@ const SignUp = () => {
                                     value={data.password}
                                     name='password' 
                                     onChange={handleOnChange}
-                                    required
+                                    requiamber
                                     className='w-full h-full outline-none bg-transparent'/>
                                 <div className='cursor-pointer text-xl' onClick={()=>setShowPassword((preve)=>!preve)}>
                                     <span>
@@ -159,7 +159,7 @@ const SignUp = () => {
                                     value={data.confirmPassword}
                                     name='confirmPassword' 
                                     onChange={handleOnChange}
-                                    required
+                                    requiamber
                                     className='w-full h-full outline-none bg-transparent'/>
 
                                 <div className='cursor-pointer text-xl' onClick={()=>setShowConfirmPassword((preve)=>!preve)}>
@@ -178,11 +178,11 @@ const SignUp = () => {
                             </div>
                         </div>
 
-                        <button className='bg-red-600 hover:bg-red-700 text-white px-6 py-2 w-full max-w-[150px] rounded-full hover:scale-110 transition-all mx-auto block mt-6'>Sign Up</button>
+                        <button className='bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 w-full max-w-[150px] rounded-full hover:scale-110 transition-all mx-auto block mt-6'>Sign Up</button>
 
                     </form>
 
-                    <p className='my-5'>Already have account ? <Link to={"/login"} className=' text-red-600 hover:text-red-700 hover:underline'>Login</Link></p>
+                    <p className='my-5'>Already have account ? <Link to={"/login"} className=' text-amber-600 hover:text-amber-700 hover:underline'>Login</Link></p>
             </div>
 
 

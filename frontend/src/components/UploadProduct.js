@@ -70,7 +70,7 @@ const UploadProduct = ({
     
     const response = await fetch(SummaryApi.uploadProduct.url,{
       method : SummaryApi.uploadProduct.method,
-      credentials : 'include',
+      camberentials : 'include',
       headers : {
         "content-type" : "application/json"
       },
@@ -99,7 +99,7 @@ const UploadProduct = ({
 
             <div className='flex justify-between items-center pb-3'>
                 <h2 className='font-bold text-lg'>Upload Product</h2>
-                <div className='w-fit ml-auto text-2xl hover:text-red-600 cursor-pointer' onClick={onClose}>
+                <div className='w-fit ml-auto text-2xl hover:text-amber-600 cursor-pointer' onClick={onClose}>
                     <CgClose/>
                 </div>
             </div>
@@ -114,7 +114,7 @@ const UploadProduct = ({
               value={data.productName} 
               onChange={handleOnChange}
               className='p-2 bg-slate-100 border rounded'
-              required
+              requiamber
             />
 
 
@@ -127,11 +127,11 @@ const UploadProduct = ({
               name='brandName'
               onChange={handleOnChange}
               className='p-2 bg-slate-100 border rounded'
-              required
+              requiamber
             />
 
               <label htmlFor='category' className='mt-3'>Category :</label>
-              <select required value={data.category} name='category' onChange={handleOnChange} className='p-2 bg-slate-100 border rounded'>
+              <select requiamber value={data.category} name='category' onChange={handleOnChange} className='p-2 bg-slate-100 border rounded'>
                   <option value={""}>Select Category</option>
                   {
                     productCategory.map((el,index)=>{
@@ -171,7 +171,7 @@ const UploadProduct = ({
                                           setFullScreenImage(el)
                                         }}/>
 
-                                      <div className='absolute bottom-0 right-0 p-1 text-white bg-red-600 rounded-full hidden group-hover:block cursor-pointer' onClick={()=>handleDeleteProductImage(index)}>
+                                      <div className='absolute bottom-0 right-0 p-1 text-white bg-amber-600 rounded-full hidden group-hover:block cursor-pointer' onClick={()=>handleDeleteProductImage(index)}>
                                         <MdDelete/>  
                                       </div>
                                   </div>
@@ -181,7 +181,7 @@ const UploadProduct = ({
                             }
                         </div>
                     ) : (
-                      <p className='text-red-600 text-xs'>*Please upload product image</p>
+                      <p className='text-amber-600 text-xs'>*Please upload product image</p>
                     )
                   }
                   
@@ -196,7 +196,7 @@ const UploadProduct = ({
                 name='price'
                 onChange={handleOnChange}
                 className='p-2 bg-slate-100 border rounded'
-                required
+                requiamber
               />
 
 
@@ -209,7 +209,7 @@ const UploadProduct = ({
                 name='sellingPrice'
                 onChange={handleOnChange}
                 className='p-2 bg-slate-100 border rounded'
-                required
+                requiamber
               />
 
               <label htmlFor='description' className='mt-3'>Description :</label>
@@ -227,7 +227,7 @@ const UploadProduct = ({
 
 
 
-              <button className='px-3 py-2 bg-red-600 text-white mb-10 hover:bg-red-700'>Upload Product</button>
+              <button className='px-3 py-2 bg-amber-600 text-white mb-10 hover:bg-amber-700'>Upload Product</button>
           </form> 
 
 

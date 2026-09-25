@@ -70,7 +70,7 @@ const UploadProduct = ({
     
     const response = await fetch(SummaryApi.uploadProduct.url,{
       method : SummaryApi.uploadProduct.method,
-      camberentials : 'include',
+      credentials : 'include', // Fixed typo here
       headers : {
         "content-type" : "application/json"
       },
@@ -89,7 +89,7 @@ const UploadProduct = ({
     if(responseData.error){
       toast.error(responseData?.message)
     }
- 
+  
 
   }
 
@@ -114,7 +114,7 @@ const UploadProduct = ({
               value={data.productName} 
               onChange={handleOnChange}
               className='p-2 bg-slate-100 border rounded'
-              requiamber
+              required
             />
 
 
@@ -127,11 +127,11 @@ const UploadProduct = ({
               name='brandName'
               onChange={handleOnChange}
               className='p-2 bg-slate-100 border rounded'
-              requiamber
+              required
             />
 
               <label htmlFor='category' className='mt-3'>Category :</label>
-              <select requiamber value={data.category} name='category' onChange={handleOnChange} className='p-2 bg-slate-100 border rounded'>
+              <select required value={data.category} name='category' onChange={handleOnChange} className='p-2 bg-slate-100 border rounded'>
                   <option value={""}>Select Category</option>
                   {
                     productCategory.map((el,index)=>{
@@ -196,7 +196,7 @@ const UploadProduct = ({
                 name='price'
                 onChange={handleOnChange}
                 className='p-2 bg-slate-100 border rounded'
-                requiamber
+                required
               />
 
 
@@ -209,7 +209,7 @@ const UploadProduct = ({
                 name='sellingPrice'
                 onChange={handleOnChange}
                 className='p-2 bg-slate-100 border rounded'
-                requiamber
+                required
               />
 
               <label htmlFor='description' className='mt-3'>Description :</label>
@@ -223,19 +223,9 @@ const UploadProduct = ({
               >
               </textarea>
 
-
-
-
-
               <button className='px-3 py-2 bg-amber-600 text-white mb-10 hover:bg-amber-700'>Upload Product</button>
-          </form> 
-
-
-
-     
+         </form> 
        </div>
-
-
 
        {/***display image full screen */}
        {
@@ -243,8 +233,6 @@ const UploadProduct = ({
           <DisplayImage onClose={()=>setOpenFullScreenImage(false)} imgUrl={fullScreenImage}/>
         )
        }
-        
-
     </div>
   )
 }

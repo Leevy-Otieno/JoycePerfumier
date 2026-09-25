@@ -8,8 +8,8 @@ import { toast } from 'react-toastify';
 import Context from '../context';
 
 const Login = () => {
-    const [showPassword,setShowPassword] = useState(false)
-    const [data,setData] = useState({
+    const [showPassword, setShowPassword] = useState(false)
+    const [data, setData] = useState({
         email : "",
         password : ""
     })
@@ -27,35 +27,38 @@ const Login = () => {
         })
     }
 
-
     const handleSubmit = async(e) =>{
         e.preventDefault()
 
-        const dataResponse = await fetch(SummaryApi.signIn.url,{
-            method : SummaryApi.signIn.method,
-            camberentials : 'include',
-            headers : {
-                "content-type" : "application/json"
-            },
-            body : JSON.stringify(data)
-        })
+        try {
+            const dataResponse = await fetch(SummaryApi.signIn.url, {
+                method : SummaryApi.signIn.method,
+                credentials : 'include', // Fixed typo here from camberentials
+                headers : {
+                    "content-type" : "application/json"
+                },
+                body : JSON.stringify(data)
+            })
 
-        const dataApi = await dataResponse.json()
+            const dataApi = await dataResponse.json()
 
-        if(dataApi.success){
-            toast.success(dataApi.message)
-            navigate('/')
-            fetchUserDetails()
-            fetchUserAddToCart()
+            if(dataApi.success){
+                toast.success(dataApi.message)
+                navigate('/')
+                fetchUserDetails()
+                fetchUserAddToCart()
+            }
+
+            if(dataApi.error){
+                toast.error(dataApi.message)
+            }
+        } catch (error) {
+            toast.error("Something went wrong. Please check your connection.")
+            console.error("Login error:", error)
         }
-
-        if(dataApi.error){
-            toast.error(dataApi.message)
-        }
-
     }
 
-    console.log("data login",data)
+    console.log("data login", data)
     
   return (
     <section id='login'>

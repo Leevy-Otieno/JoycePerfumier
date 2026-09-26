@@ -7,8 +7,12 @@ const router = require('./routes')
 
 const app = express()
 
+// Updated CORS middleware to accept an array of both local and production origins
 app.use(cors({
-    origin: process.env.FRONTEND_URL,
+    origin: [
+        process.env.FRONTEND_URL,
+        "https://vercel.app" // Your exact Vercel frontend URL
+    ],
     credentials: true
 }))
 

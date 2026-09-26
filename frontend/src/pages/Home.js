@@ -10,6 +10,7 @@ const Home = () => {
       <CategoryList />
       <BannerProduct />
 
+      {/* Horizontal Slider Rows */}
       <HorizontalCardProduct
         category={"Mens Perfumes"}
         heading={"Mens Perfumes"}
@@ -19,16 +20,17 @@ const Home = () => {
         heading={"Popular's Watches"}
       />
 
+      {/* Vertical Card Grid Rows */}
       <VerticalCardProduct
         category={"unisex perfumes"}
-        heading={"unisex perfumes"}
+        heading={"Unisex Perfumes"}
       />
       <VerticalCardProduct
         category={"women's fragrances"}
-        heading={"Women's fragrances"}
+        heading={"Women's Fragrances"}
       />
       <VerticalCardProduct
-        category={"body sprays & mists"}
+        category={"body Sprays & mists"}
         heading={"Body Sprays & Mists"}
       />
       <VerticalCardProduct
@@ -40,16 +42,19 @@ const Home = () => {
         heading={"Personalized & Custom Gifts"}
       />
       <VerticalCardProduct
-        category={"for him valentine gift"}
+        category={"for him valentines gift"}
         heading={"For Him Valentine gift"}
       />
       <VerticalCardProduct
-        category={"for her valentine gift"}
+        category={"For Her Valentine gift"}
         heading={"For Her Valentine gift"}
       />
-      <VerticalCardProduct category={"gift boxes"} heading={"Gift boxes"} />
+      <VerticalCardProduct 
+        category={"gift boxes"} 
+        heading={"Gift boxes"} 
+      />
       <VerticalCardProduct
-        category={"love notes & giftcards"}
+        category={"love notes & gift cards"}
         heading={"Love notes & Giftcards"}
       />
     </div>

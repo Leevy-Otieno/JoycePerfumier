@@ -36,7 +36,7 @@ function App() {
 
     const dataApi = await dataResponse.json()
 
-    setCartProductCount(dataApi?.data?.count)
+    setCartProductCount(dataApi?.data?.count || 0)
   }
 
   useEffect(()=>{
@@ -44,21 +44,31 @@ function App() {
     fetchUserDetails()
     /**user Details cart product */
     fetchUserAddToCart()
-
   },[])
+
   return (
     <>
       <Context.Provider value={{
-          fetchUserDetails, // user detail fetch 
-          cartProductCount, // current user add to cart product count,
+          fetchUserDetails, 
+          cartProductCount, 
           fetchUserAddToCart
       }}>
         <ToastContainer 
           position='top-center'
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme='light'
         />
         
         <Header/>
-        <main className='min-h-[calc(100vh-120px)] pt-16'>
+        {/* Adjusted padding top parameters to match the new spacious tier header layout cleanly */}
+        <main className='min-h-[calc(100vh-120px)] pt-16 lg:pt-24 bg-slate-50/50'>
           <Outlet/>
         </main>
         <Footer/>

@@ -108,7 +108,7 @@ const About = () => {
             Ready to Begin Your <span className='text-amber-500 normal-case italic font-light font-serif capitalize'>Scent Journey?</span>
           </h3>
           <p className='text-slate-400 text-xs font-light leading-relaxed'>
-            Return to our main home displays to explore trending gift items, or connect directly with our studio concierge numbers for order configuration help.
+            Return to our main home displays to explore trending gift items, or connect directly with sop concierge numbers for order configuration help.
           </p>
           <div className='flex flex-col sm:flex-row items-center justify-center gap-4 pt-2'>
             {/*  Fixed: Button now returns user back to Home page layout route */}

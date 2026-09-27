@@ -51,7 +51,7 @@ const Contact = () => {
           <h1 className="text-3xl md:text-4xl font-serif font-bold tracking-wide uppercase text-slate-900">
             Contact{" "}
             <span className="text-amber-600 font-light lowercase italic capitalize">
-              Our Studio
+              Shop
             </span>
           </h1>
           <p className="text-slate-500 text-xs md:text-sm font-light leading-relaxed">

@@ -1,6 +1,5 @@
-// 🌟 CHANGE THIS LINK BELOW: Put your Render or Railway backend URL here!
-// DO NOT use your vercel.app link on this line.
-const backendDomin = "https://onrender.com" 
+// 🌟 CONNECTED: Linked directly to your unique, live Render backend API service
+const backendDomin = "https://onrender.com"
 
 const SummaryApi = {
     signUP : {

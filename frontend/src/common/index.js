@@ -1,6 +1,6 @@
-// 🌟 FIXED: Change this string to your live deployed BACKEND server link (e.g., Render, Railway, etc.)
-// DO NOT use your frontend Vercel link here. It must be your backend API URL!
-const backendDomin = "https://onrender.com"
+// 🌟 CHANGE THIS LINK BELOW: Put your Render or Railway backend URL here!
+// DO NOT use your vercel.app link on this line.
+const backendDomin = "https://onrender.com" 
 
 const SummaryApi = {
     signUP : {

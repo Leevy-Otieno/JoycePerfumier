@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import image1 from "../assest/banner/img1.jpeg";
-import image2 from "../assest/banner/img2.jpeg";
+import image2 from "../assest/banner/img2.jpg";
 import image3 from "../assest/banner/img3.jpeg";
 import image4 from "../assest/banner/img4.jpeg";
 import image5 from "../assest/banner/img5.jpeg";
 
 import image1Mobile from "../assest/banner/img1_mobile.jpeg";
-import image2Mobile from "../assest/banner/img2_mobile.jpeg";
+import image2Mobile from "../assest/banner/img2_mobile.jpg";
 import image3Mobile from "../assest/banner/img3_mobile.jpeg";
 import image4Mobile from "../assest/banner/img4_mobile.jpeg";
 import image5Mobile from "../assest/banner/img5_mobile.jpeg";

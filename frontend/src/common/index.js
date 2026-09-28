@@ -1,4 +1,6 @@
-const backendDomin = "https://joyce-perfumier.vercel.app/"
+// 🌟 FIXED: Change this string to your live deployed BACKEND server link (e.g., Render, Railway, etc.)
+// DO NOT use your frontend Vercel link here. It must be your backend API URL!
+const backendDomin = "https://onrender.com"
 
 const SummaryApi = {
     signUP : {
@@ -78,6 +80,5 @@ const SummaryApi = {
         method : 'post'
     }
 }
-
 
 export default SummaryApi
